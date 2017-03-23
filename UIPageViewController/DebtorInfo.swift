@@ -60,7 +60,7 @@ class DebtorInfo {
     var DateOfBirths : String
     var PostCode : String
     var ClientAcc : String
-
+    var ClientPhoneInNo : String
     
     init() {
         Name = ""
@@ -112,6 +112,7 @@ class DebtorInfo {
         DateOfBirths = ""
         PostCode = ""
         ClientAcc = ""
+        ClientPhoneInNo = ""
     }
     
 }

@@ -73,10 +73,10 @@ struct LocalStore {
 
     fileprivate static let ClientName = "ClientName"
 
-    
     fileprivate static let ClientAcc = "ClientAcc"
 
-    
+    fileprivate static let ClientPhoneInNo = "ClientPhoneInNo"
+
     //----------------------------------------------------------------------------//
     static func setDeviceToken(_ token: String) {
         userDefaults.set(token, forKey: DeviceToken)
@@ -660,6 +660,21 @@ struct LocalStore {
     
     static func accessClientAcc() -> String? {
         return userDefaults.string(forKey: ClientAcc)
+    }
+    //----------------------------------------------------------------------------//
+    
+    static func setClientPhoneInNo(_ token: String) {
+        userDefaults.set(token, forKey: ClientPhoneInNo)
+        userDefaults.synchronize()
+    }
+    
+    static func deleteClientPhoneInNo() {
+        userDefaults.removeObject(forKey: ClientPhoneInNo)
+        userDefaults.synchronize()
+    }
+    
+    static func accessClientPhoneInNo() -> String? {
+        return userDefaults.string(forKey: ClientPhoneInNo)
     }
     //----------------------------------------------------------------------------//
 

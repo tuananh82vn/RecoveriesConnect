@@ -34,7 +34,7 @@ class HomeViewController: UIViewController, TKSideDrawerDelegate  {
 
         sectionPrimary?.addItem(withTitle: "Provide Feedback",image: UIImage(named: "Quote")!)
         
-        sectionPrimary?.addItem(withTitle: "About",image: UIImage(named: "info")!)
+//        sectionPrimary?.addItem(withTitle: "About",image: UIImage(named: "info")!)
 
         sectionPrimary?.addItem(withTitle: "Contact Us",image: UIImage(named: "ContactUs")!)
 
@@ -264,16 +264,16 @@ class HomeViewController: UIViewController, TKSideDrawerDelegate  {
             
             }
             
-            if(indexPath.row == 1 ){
-                
-                
-                let aboutViewController = self.storyboard!.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
-                
-                self.navigationController!.pushViewController(aboutViewController, animated: true)
-                
-            }
+//            if(indexPath.row == 1 ){
+//                
+//                
+//                let aboutViewController = self.storyboard!.instantiateViewController(withIdentifier: "AboutViewController") as! AboutViewController
+//                
+//                self.navigationController!.pushViewController(aboutViewController, animated: true)
+//                
+//            }
             
-            if(indexPath.row == 2 ){
+            if(indexPath.row == 1 ){
                 
                 let contactUsViewController = self.storyboard!.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
                 

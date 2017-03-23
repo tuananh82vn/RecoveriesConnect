@@ -82,6 +82,7 @@ class LoginController: UIViewController {
                     LocalStore.setDRCode(temp1.DRCode)
                     LocalStore.setClientName(temp1.ClientName)
                     LocalStore.setClientAcc(temp1.ClientAcc)
+                    LocalStore.setClientPhoneInNo(temp1.ClientPhoneInNo)
 
                     if(temp1.MaxNoPay > 3 ){
                         temp1.MaxNoPay = 3

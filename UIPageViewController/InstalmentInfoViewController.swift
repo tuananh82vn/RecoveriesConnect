@@ -49,10 +49,10 @@ class InstalmentInfoViewController: UIViewController , TKChartDelegate {
     }
     
     @IBAction func makePayment_Clicked(_ sender: AnyObject) {
-        SetPayment.SetPayment(4)
         
-        self.performSegue(withIdentifier: "GoToMakePayment", sender: nil)
+        self.performSegue(withIdentifier: "GoToMakeAPayment", sender: nil)
     }
+    
     func loadData(){
         
         WebApiService.GetArrangmentDetail(LocalStore.accessRefNumber()!) { objectReturn in

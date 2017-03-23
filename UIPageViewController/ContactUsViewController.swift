@@ -10,9 +10,18 @@ import UIKit
 
 class ContactUsViewController: UIViewController {
 
+    @IBOutlet weak var txtView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let originalAttributedText = self.txtView.attributedText?.mutableCopy() as! NSMutableAttributedString
+        
+        originalAttributedText.mutableString.replaceOccurrences(of: "1 300 663 060", with: LocalStore.accessClientPhoneInNo()!, options: .literal, range: NSMakeRange(0, originalAttributedText.string.length))
+        
+        self.txtView.attributedText = originalAttributedText
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +29,7 @@ class ContactUsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

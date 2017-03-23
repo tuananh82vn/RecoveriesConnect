@@ -630,6 +630,10 @@ struct WebApiService {
                     JsonReturn.ClientAcc = ClientAcc
                 }
                 
+                if let ClientPhoneInNo = jsonObject["ClientPhoneInNo"].string {
+                    JsonReturn.ClientPhoneInNo = ClientPhoneInNo
+                }
+                
                 if let IsExistingArrangement = jsonObject["IsExistingArrangement"].bool {
                     JsonReturn.IsExistingArrangement = IsExistingArrangement
                 }
