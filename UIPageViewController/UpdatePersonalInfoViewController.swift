@@ -38,7 +38,7 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UpdatePersonalInfoViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        alignmentMode = "Top"
+        //alignmentMode = "Top"
         
         if(self.screenComeForm == "CCPayment" || self.screenComeForm == "DDPayment"){
 
@@ -75,14 +75,76 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     
                     self.dataSource.sourceObject = self.paymentInfo.personalInfo
                     
-                    self.dataSource["StreetAddress"].editorClass = TKDataFormTextFieldEditor.self
-                    self.dataSource["Origin_StreetAddress"].hidden = true
-                    self.dataSource["Marked_StreetAddress"].hidden = true
+                    self.dataSource["StreetAddress1"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetAddress1"].displayName = "Address 1"
+                    self.dataSource["Origin_StreetAddress1"].hidden = true
+                    self.dataSource["Marked_StreetAddress1"].hidden = true
+                    
+                    self.dataSource["StreetAddress2"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetAddress2"].displayName = "Address 2"
 
-                    self.dataSource["MailAddress"].editorClass = TKDataFormTextFieldEditor.self
-                    self.dataSource["Origin_MailAddress"].hidden = true
-                    self.dataSource["Marked_MailAddress"].hidden = true
+                    self.dataSource["Origin_StreetAddress2"].hidden = true
+                    self.dataSource["Marked_StreetAddress2"].hidden = true
+                    
+                    self.dataSource["StreetAddress3"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetAddress3"].displayName = "Address 3"
 
+                    self.dataSource["Origin_StreetAddress3"].hidden = true
+                    self.dataSource["Marked_StreetAddress3"].hidden = true
+                
+                    
+                    self.dataSource["StreetSuburb"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetSuburb"].displayName = "Suburb"
+                    self.dataSource["Origin_StreetSuburb"].hidden = true
+                    self.dataSource["Marked_StreetSuburb"].hidden = true
+                    
+                    self.dataSource["StreetPostCode"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetPostCode"].displayName = "Postcode"
+                    self.dataSource["Origin_StreetPostCode"].hidden = true
+                    self.dataSource["Marked_StreetPostCode"].hidden = true
+                    
+                    self.dataSource["StreetState"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["StreetState"].displayName = "State"
+                    self.dataSource["Origin_StreetState"].hidden = true
+                    self.dataSource["Marked_StreetState"].hidden = true
+
+
+
+                    self.dataSource["MailAddress1"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailAddress1"].displayName = "Address 1"
+
+                    self.dataSource["Origin_MailAddress1"].hidden = true
+                    self.dataSource["Marked_MailAddress1"].hidden = true
+                    
+                    self.dataSource["MailAddress2"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailAddress2"].displayName = "Address 2"
+
+                    self.dataSource["Origin_MailAddress2"].hidden = true
+                    self.dataSource["Marked_MailAddress2"].hidden = true
+                    
+                    self.dataSource["MailAddress3"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailAddress3"].displayName = "Address 3"
+
+                    self.dataSource["Origin_MailAddress3"].hidden = true
+                    self.dataSource["Marked_MailAddress3"].hidden = true
+                
+                    
+                    self.dataSource["MailSuburb"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailSuburb"].displayName = "Suburb"
+                    self.dataSource["Origin_MailSuburb"].hidden = true
+                    self.dataSource["Marked_MailSuburb"].hidden = true
+                    
+                    self.dataSource["MailPostCode"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailPostCode"].displayName = "Postcode"
+                    self.dataSource["Origin_MailPostCode"].hidden = true
+                    self.dataSource["Marked_MailPostCode"].hidden = true
+                    
+                    self.dataSource["MailState"].editorClass = TKDataFormTextFieldEditor.self
+                    self.dataSource["MailState"].displayName = "State"
+                    self.dataSource["Origin_MailState"].hidden = true
+                    self.dataSource["Marked_MailState"].hidden = true
+                    
+                    
                     self.dataSource["HomePhone"].editorClass = TKDataFormPhoneEditor.self
                     self.dataSource["Origin_HomePhone"].hidden = true
                     self.dataSource["Marked_HomePhone"].hidden = true
@@ -96,7 +158,6 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource["Marked_MobilePhone"].hidden = true
 
                     self.dataSource["Preferred"].valuesProvider = self.CallbackSlot
-                    
                     self.dataSource["Preferred"].editorClass = TKDataFormPickerViewEditor.self
                     
                     self.dataSource["EmailAddress"].editorClass = TKDataFormEmailEditor.self
@@ -104,12 +165,19 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource["Origin_EmailAddress"].hidden = true
                     self.dataSource["Marked_EmailAddress"].hidden = true
 
+                    self.dataSource.addGroup(withName: "Street Address", propertyNames: [ "StreetAddress1","StreetAddress2","StreetAddress3","StreetSuburb","StreetPostCode","StreetState" ])
+
+                    self.dataSource.addGroup(withName: "Mail Address", propertyNames: [ "MailAddress1","MailAddress2","MailAddress3","MailSuburb","MailPostCode","MailState" ])
                     
+                    self.dataSource.addGroup(withName: "Phone & Email", propertyNames: [ "HomePhone","WorkPhone","MobilePhone","Preferred" ,"EmailAddress"])
+                    
+                    self.dataForm1.groupSpacing = 30
+
                     self.dataForm1 = TKDataForm(frame: self.subView.bounds)
                     
                     self.dataForm1.delegate = self
                     self.dataForm1.dataSource = self.dataSource
-                    self.dataForm1.allowScroll = false
+                    self.dataForm1.allowScroll = true
                     
                     self.dataForm1.backgroundColor = UIColor.white
                     self.dataForm1.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleWidth.rawValue | UIViewAutoresizing.flexibleHeight.rawValue)
@@ -155,43 +223,60 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         
     }
     
+    func dataForm(_ dataForm: TKDataForm, update groupView: TKEntityPropertyGroupView, forGroupAt groupIndex: UInt) {
+        groupView.titleView.titleLabel.textColor = UIColor.lightGray
+        groupView.titleView.titleLabel.font = UIFont.systemFont(ofSize: 17)
+        groupView.titleView.style.insets = UIEdgeInsetsMake(0, 10, 0, 0)
+        if groupIndex == 0 {
+            groupView.editorsContainer.backgroundColor = UIColor.lightGray
+        }
+        
+        if groupIndex == 1 {
+            groupView.editorsContainer.backgroundColor = UIColor.clear
+        }
+        
+        if groupIndex == 2 {
+            groupView.editorsContainer.backgroundColor = UIColor.lightGray
+        }
+    }
+    
     func dataForm(_ dataForm: TKDataForm, update editor: TKDataFormEditor, for property: TKEntityProperty) {
         
         property.hintText = property.displayName
         
-        if alignmentMode == "Top" {
-            self.performTopAlignmentSettingsForEditor(editor, property: property)
-        }
+//        if alignmentMode == "Top" {
+//            self.performTopAlignmentSettingsForEditor(editor, property: property)
+//        }
         
-        if(property.name == "Preferred")
-        {
-            editor.style.separatorColor = nil
-            editor.style.insets = UIEdgeInsetsMake(6, editor.style.insets.left, 6, editor.style.insets.right)
-        }
+//        if(property.name == "Preferred")
+//        {
+//            editor.style.separatorColor = nil
+//            editor.style.insets = UIEdgeInsetsMake(6, editor.style.insets.left, 6, editor.style.insets.right)
+//        }
         
     }
     
-    func performTopAlignmentSettingsForEditor(_ editor: TKDataFormEditor, property: TKEntityProperty) {
-        
-        editor.style.separatorColor = nil
-        //editor.textLabel.font = UIFont.systemFontOfSize(15)
-        editor.style.insets = UIEdgeInsetsMake(1, editor.style.insets.left, 5, editor.style.insets.right)
-        
-        
-        let gridLayout = editor.gridLayout
-        let editorDef = gridLayout.definition(for: editor.editor)
-        editorDef?.row = 1
-        editorDef?.column = 1
-        
-        
-        let feedbackLabelDef = editor.gridLayout.definition(for: editor.feedbackLabel)
-        feedbackLabelDef?.row = 2
-        feedbackLabelDef?.column = 1
-        feedbackLabelDef?.columnSpan = 1
-        
-        self.setEditorStyle(editor)
-        
-    }
+//    func performTopAlignmentSettingsForEditor(_ editor: TKDataFormEditor, property: TKEntityProperty) {
+//        
+//        editor.style.separatorColor = nil
+//        //editor.textLabel.font = UIFont.systemFontOfSize(15)
+//        editor.style.insets = UIEdgeInsetsMake(1, editor.style.insets.left, 5, editor.style.insets.right)
+//        
+//        
+//        let gridLayout = editor.gridLayout
+//        let editorDef = gridLayout.definition(for: editor.editor)
+//        editorDef?.row = 1
+//        editorDef?.column = 1
+//        
+//        
+//        let feedbackLabelDef = editor.gridLayout.definition(for: editor.feedbackLabel)
+//        feedbackLabelDef?.row = 2
+//        feedbackLabelDef?.column = 1
+//        feedbackLabelDef?.columnSpan = 1
+//        
+//        self.setEditorStyle(editor)
+//        
+//    }
     
     func setEditorStyle(_ editor: TKDataFormEditor) {
         
@@ -199,7 +284,7 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         
         if editor.isKind(of: TKDataFormTextFieldEditor.self) {
             layer = editor.editor.layer;
-            (editor.editor as! TKTextField).textInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            (editor.editor as! TKTextField).textInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
         
@@ -235,15 +320,25 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
     }
     
     
-    func dataForm(_ dataForm: TKDataForm, heightForEditorInGroup gorupIndex: UInt, at editorIndex: UInt) -> CGFloat {
-
-        
-        return 65
-
-    }
-
+//    func dataForm(_ dataForm: TKDataForm, heightForEditorInGroup gorupIndex: UInt, at editorIndex: UInt) -> CGFloat {
+//
+//        return 65
+//
+//    }
+//
+    
     func dataForm(_ dataForm: TKDataForm, heightForHeaderInGroup groupIndex: UInt) -> CGFloat {
         return 40
+    }
+    
+    func CompareText(displayText : String, markText: String, originText: String) -> String {
+        if(displayText == markText){
+            return originText
+        }
+        else
+        {
+            return displayText
+        }
     }
     
     @IBAction func btContinue_Clicked(_ sender: AnyObject) {
@@ -266,16 +361,44 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
             
             let personalInfo = PersonalInfo()
             
-            personalInfo.StreetAddress          = self.dataSource["StreetAddress"].valueCandidate as! String
-            personalInfo.MailAddress            = self.dataSource["MailAddress"].valueCandidate as! String
-            personalInfo.HomePhone              = self.dataSource["HomePhone"].valueCandidate as! String
-            personalInfo.MobilePhone            = self.dataSource["MobilePhone"].valueCandidate as! String
-            personalInfo.WorkPhone              = self.dataSource["WorkPhone"].valueCandidate as! String
-            personalInfo.Preferred              = self.dataSource["Preferred"].valueCandidate as! Int
-            personalInfo.EmailAddress           = self.dataSource["EmailAddress"].valueCandidate as! String
+            personalInfo.StreetAddress1         = self.CompareText(displayText: self.dataSource["StreetAddress1"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetAddress1,originText: self.paymentInfo.personalInfo.Origin_StreetAddress1)
 
+            personalInfo.StreetAddress2         = self.CompareText(displayText: self.dataSource["StreetAddress2"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetAddress2,originText: self.paymentInfo.personalInfo.Origin_StreetAddress2)
+            
+            personalInfo.StreetAddress3         = self.CompareText(displayText: self.dataSource["StreetAddress3"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetAddress3,originText: self.paymentInfo.personalInfo.Origin_StreetAddress3)
             
             
+            personalInfo.StreetState        = self.CompareText(displayText: self.dataSource["StreetState"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetState,originText: self.paymentInfo.personalInfo.Origin_StreetState)
+            
+            personalInfo.StreetSuburb        = self.CompareText(displayText: self.dataSource["StreetSuburb"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetSuburb,originText: self.paymentInfo.personalInfo.Origin_StreetSuburb)
+
+            personalInfo.StreetPostCode        = self.CompareText(displayText: self.dataSource["StreetPostCode"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_StreetPostCode,originText: self.paymentInfo.personalInfo.Origin_StreetPostCode)
+            
+            
+            personalInfo.MailAddress1         = self.CompareText(displayText: self.dataSource["MailAddress1"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailAddress1,originText: self.paymentInfo.personalInfo.Origin_MailAddress1)
+            
+            personalInfo.MailAddress2         = self.CompareText(displayText: self.dataSource["MailAddress2"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailAddress2,originText: self.paymentInfo.personalInfo.Origin_MailAddress2)
+            
+            personalInfo.MailAddress3         = self.CompareText(displayText: self.dataSource["MailAddress3"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailAddress3,originText: self.paymentInfo.personalInfo.Origin_MailAddress3)
+            
+            
+            personalInfo.MailState        = self.CompareText(displayText: self.dataSource["MailState"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailState,originText: self.paymentInfo.personalInfo.Origin_MailState)
+            
+            personalInfo.MailSuburb        = self.CompareText(displayText: self.dataSource["MailSuburb"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailSuburb,originText: self.paymentInfo.personalInfo.Origin_MailSuburb)
+            
+            personalInfo.MailPostCode        = self.CompareText(displayText: self.dataSource["MailPostCode"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MailPostCode,originText: self.paymentInfo.personalInfo.Origin_MailPostCode)
+            
+            personalInfo.HomePhone        = self.CompareText(displayText: self.dataSource["HomePhone"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_HomePhone,originText: self.paymentInfo.personalInfo.Origin_HomePhone)
+            
+            personalInfo.MobilePhone        = self.CompareText(displayText: self.dataSource["MobilePhone"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_MobilePhone,originText: self.paymentInfo.personalInfo.Origin_MobilePhone)
+         
+            personalInfo.WorkPhone        = self.CompareText(displayText: self.dataSource["WorkPhone"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_WorkPhone,originText: self.paymentInfo.personalInfo.Origin_WorkPhone)
+            
+            personalInfo.EmailAddress        = self.CompareText(displayText: self.dataSource["EmailAddress"].valueCandidate as! String,markText: self.paymentInfo.personalInfo.Marked_EmailAddress,originText: self.paymentInfo.personalInfo.Origin_EmailAddress)
+            
+            personalInfo.Preferred              = self.dataSource["Preferred"].valueCandidate as! Int
+
+
             WebApiService.SetPersonalInfo(personalInfo){ objectReturn in
                 
                 self.view.hideLoading();

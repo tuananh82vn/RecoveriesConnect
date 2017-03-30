@@ -59,6 +59,8 @@ struct LocalStore {
     
     fileprivate static let ThreePartDateDurationDays = "ThreePartDateDurationDays";
     
+    fileprivate static let ThreePartMaxDaysBetweenPayments = "ThreePartMaxDaysBetweenPayments";
+    
     fileprivate static let FirstAmountOfInstalment = "FirstAmountOfInstalment"
 
     fileprivate static let WeeklyAmount = "WeeklyAmount"
@@ -570,6 +572,23 @@ struct LocalStore {
     
     static func accessThreePartDateDurationDays() -> Int {
         return userDefaults.integer(forKey: ThreePartDateDurationDays)
+    }
+    
+    //----------------------------------------------------------------------------//
+    
+    
+    static func setThreePartMaxDaysBetweenPayments (_ token: Int) {
+        userDefaults.set(token, forKey: ThreePartMaxDaysBetweenPayments)
+        userDefaults.synchronize()
+    }
+    
+    static func deleteThreePartMaxDaysBetweenPayments() {
+        userDefaults.removeObject(forKey: ThreePartMaxDaysBetweenPayments)
+        userDefaults.synchronize()
+    }
+    
+    static func accessThreePartMaxDaysBetweenPayments() -> Int {
+        return userDefaults.integer(forKey: ThreePartMaxDaysBetweenPayments)
     }
     
     //----------------------------------------------------------------------------//

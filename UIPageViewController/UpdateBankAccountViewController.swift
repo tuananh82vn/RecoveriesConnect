@@ -94,7 +94,8 @@ class UpdateBankAccountViewController: UIViewController , TKDataFormDelegate {
                     self.dataForm1 = TKDataForm(frame: self.subView.bounds)
                     self.dataForm1.delegate = self
                     self.dataForm1.dataSource = self.dataSource
-                    
+                    self.dataForm1.allowScroll = false
+
                     self.dataForm1.backgroundColor = UIColor.white
                     self.dataForm1.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleWidth.rawValue | UIViewAutoresizing.flexibleHeight.rawValue)
                     

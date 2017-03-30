@@ -161,6 +161,7 @@
 		AE99CDF31E3ED9D500A2732E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		AE99CDF51E3EE28800A2732E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		AEA7342F1E42EEC7001A6F1E /* CreateInstalmentPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInstalmentPlanViewController.swift; sourceTree = "<group>"; };
+		AEB371B81E8B320300E53447 /* Recoveries Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Recoveries Connect.entitlements"; sourceTree = "<group>"; };
 		AED7317E1E790C4D007CE4AC /* BSBEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBEditor.swift; sourceTree = "<group>"; };
 		C62A048DF21B05FF53A58C3B /* Pods_UIPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C715F92E1CD30F8200B8198A /* DownloadFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadFile.swift; sourceTree = "<group>"; };
@@ -307,6 +308,7 @@
 		78E75F3E1AC5FC48001A93F1 /* UIPageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AEB371B81E8B320300E53447 /* Recoveries Connect.entitlements */,
 				C7DA8AD91CD3525A00C6E853 /* inbox.sqlite */,
 				78E75F451AC5FC48001A93F1 /* Main.storyboard */,
 				AE68019C1E790577000EE643 /* Launch Screen.storyboard */,
@@ -934,6 +936,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "UIPageViewController/Recoveries Connect.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = DENR28CDY6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -973,6 +976,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "UIPageViewController/Recoveries Connect.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = DENR28CDY6;
 				FRAMEWORK_SEARCH_PATHS = (

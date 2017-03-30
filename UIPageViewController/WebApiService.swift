@@ -1315,18 +1315,19 @@ struct WebApiService {
                             
                             if(BSB.length > 0)
                             {
-                                JsonReturn.bank.BSB = BSB
+                                  //JsonReturn.bank.BSB = BSB
                                 
-//                                let char: Character = "-"
-//                                if let idx = JsonReturn.bank.BSB.indexDistance(of: char) {
-//                                    JsonReturn.bank.BSB1 = (BSB as NSString).substring(to: idx)
-//                                    JsonReturn.bank.BSB2 = (BSB as NSString).substring(from: idx+1)
-//                                }
-//                                else {
-//                                    JsonReturn.bank.BSB1 = (BSB as NSString).substring(to: 3)
-//                                    JsonReturn.bank.BSB2 = (BSB as NSString).substring(from: 3)
-//                                }
-
+                                let char: Character = "-"
+                                if let idx = JsonReturn.bank.BSB.indexDistance(of: char) {
+                                    let BSB1 = (BSB as NSString).substring(to: idx)
+                                    let BSB2 = (BSB as NSString).substring(from: idx+1)
+                                    JsonReturn.bank.BSB = BSB1 + "-" + BSB2
+                                }
+                                else {
+                                     let BSB1 = (BSB as NSString).substring(to: 3)
+                                     let BSB2 = (BSB as NSString).substring(from: 3)
+                                     JsonReturn.bank.BSB = BSB1 + "-" + BSB2
+                                }
                             }
                             
                         }
@@ -1452,34 +1453,212 @@ struct WebApiService {
                 
                 let jsonObject = JSON(jsonReturn1)
                 
-                if let StreetAddress = jsonObject["Address1s"].string {
+                if let StreetAddress1 = jsonObject["StreetAddress1"].string {
                     
-                    JsonReturn.personalInfo.StreetAddress = StreetAddress
+                    JsonReturn.personalInfo.StreetAddress1 = StreetAddress1
+                    JsonReturn.personalInfo.Marked_StreetAddress1 = StreetAddress1
+
                 }
                 
-                if let MailAddress = jsonObject["Address2s"].string {
+                if let StreetAddress2 = jsonObject["StreetAddress2"].string {
                     
-                    JsonReturn.personalInfo.MailAddress = MailAddress
+                    JsonReturn.personalInfo.StreetAddress2 = StreetAddress2
+                    JsonReturn.personalInfo.Marked_StreetAddress2 = StreetAddress2
+
+                }
+                
+                if let StreetAddress3 = jsonObject["StreetAddress3"].string {
+                    
+                    JsonReturn.personalInfo.StreetAddress3 = StreetAddress3
+                    JsonReturn.personalInfo.Marked_StreetAddress3 = StreetAddress3
+
+                }
+                
+                if let StreetState = jsonObject["StreetState"].string {
+                    
+                    JsonReturn.personalInfo.StreetState = StreetState
+                    JsonReturn.personalInfo.Marked_StreetState = StreetState
+
+                }
+                
+                if let StreetSuburb = jsonObject["StreetSuburb"].string {
+                    
+                    JsonReturn.personalInfo.StreetSuburb = StreetSuburb
+                    JsonReturn.personalInfo.Marked_StreetSuburb = StreetSuburb
+
+                }
+                
+                if let StreetPostCode = jsonObject["StreetPostCode"].string {
+                    
+                    JsonReturn.personalInfo.StreetPostCode = StreetPostCode
+                    JsonReturn.personalInfo.Marked_StreetPostCode = StreetPostCode
+
+                }
+                
+                if let MailAddress1 = jsonObject["MailAddress1"].string {
+                    
+                    JsonReturn.personalInfo.MailAddress1 = MailAddress1
+                    JsonReturn.personalInfo.Marked_MailAddress1 = MailAddress1
+
+                }
+                
+                if let MailAddress2 = jsonObject["MailAddress2"].string {
+                    
+                    JsonReturn.personalInfo.MailAddress2 = MailAddress2
+                    JsonReturn.personalInfo.Marked_MailAddress2 = MailAddress2
+                    
+                }
+                
+                if let MailAddress3 = jsonObject["MailAddress3"].string {
+                    
+                    JsonReturn.personalInfo.MailAddress3 = MailAddress3
+                    JsonReturn.personalInfo.Marked_MailAddress3 = MailAddress3
+                    
+                }
+                
+                if let MailState = jsonObject["MailState"].string {
+                    
+                    JsonReturn.personalInfo.MailState = MailState
+                    JsonReturn.personalInfo.Marked_MailState = MailState
+                    
+                }
+                
+                if let MailSuburb = jsonObject["MailSuburb"].string {
+                    
+                    JsonReturn.personalInfo.MailSuburb = MailSuburb
+                    JsonReturn.personalInfo.Marked_MailSuburb = MailSuburb
+                    
+                }
+                
+                if let MailPostCode = jsonObject["MailPostCode"].string {
+                    
+                    JsonReturn.personalInfo.MailPostCode = MailPostCode
+                    JsonReturn.personalInfo.Marked_MailPostCode = MailPostCode
+                    
                 }
                 
                 if let HomeNumber = jsonObject["HomeNumber"].string {
                     
                     JsonReturn.personalInfo.HomePhone = HomeNumber
+                    JsonReturn.personalInfo.Marked_HomePhone = HomeNumber
+
                 }
                 
                 if let WorkNumber = jsonObject["WorkNumber"].string {
                     
                     JsonReturn.personalInfo.WorkPhone = WorkNumber
+                    JsonReturn.personalInfo.Marked_WorkPhone = WorkNumber
+
                 }
                 
                 if let MobileNumbers = jsonObject["MobileNumbers"].string {
                     
                     JsonReturn.personalInfo.MobilePhone = MobileNumbers
+                    JsonReturn.personalInfo.Marked_MobilePhone = MobileNumbers
+
                 }
                 
                 if let EmailAddress = jsonObject["EmailAddress"].string {
                     
                     JsonReturn.personalInfo.EmailAddress = EmailAddress
+                    JsonReturn.personalInfo.Marked_EmailAddress = EmailAddress
+
+                }
+                
+                if let Origin_StreetAddress1 = jsonObject["Origin_StreetAddress1"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetAddress1 = Origin_StreetAddress1
+                    
+                }
+                
+                if let Origin_StreetAddress2 = jsonObject["Origin_StreetAddress2"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetAddress2 = Origin_StreetAddress2
+                    
+                }
+                
+                if let Origin_StreetAddress3 = jsonObject["Origin_StreetAddress3"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetAddress3 = Origin_StreetAddress3
+                    
+                }
+                
+                if let Origin_StreetState = jsonObject["Origin_StreetState"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetState = Origin_StreetState
+                    
+                }
+                
+                if let Origin_StreetSuburb = jsonObject["Origin_StreetSuburb"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetSuburb = Origin_StreetSuburb
+                    
+                }
+                
+                if let Origin_StreetPostCode = jsonObject["Origin_StreetPostCode"].string {
+                    
+                    JsonReturn.personalInfo.Origin_StreetPostCode = Origin_StreetPostCode
+                    
+                }
+                
+                if let Origin_MailAddress1 = jsonObject["Origin_MailAddress1"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailAddress1 = Origin_MailAddress1
+                    
+                }
+                
+                if let Origin_MailAddress2 = jsonObject["Origin_MailAddress2"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailAddress2 = Origin_MailAddress2
+                    
+                }
+                
+                if let Origin_MailAddress3 = jsonObject["Origin_MailAddress3"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailAddress3 = Origin_MailAddress3
+                    
+                }
+                
+                if let Origin_MailState = jsonObject["Origin_MailState"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailState = Origin_MailState
+                    
+                }
+                
+                if let Origin_MailSuburb = jsonObject["Origin_MailSuburb"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailSuburb = Origin_MailSuburb
+                    
+                }
+                
+                if let Origin_MailPostCode = jsonObject["Origin_MailPostCode"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MailPostCode = Origin_MailPostCode
+                    
+                }
+                
+                if let Origin_HomeNumber = jsonObject["Origin_HomeNumber"].string {
+                    
+                    JsonReturn.personalInfo.Origin_HomePhone = Origin_HomeNumber
+                    
+                }
+                
+                if let Origin_WorkNumber = jsonObject["Origin_WorkNumber"].string {
+                    
+                    JsonReturn.personalInfo.Origin_WorkPhone = Origin_WorkNumber
+                    
+                }
+                
+                if let Origin_MobileNumbers = jsonObject["Origin_MobileNumbers"].string {
+                    
+                    JsonReturn.personalInfo.Origin_MobilePhone = Origin_MobileNumbers
+                    
+                }
+                
+                if let Origin_EmailAddress = jsonObject["Origin_EmailAddress"].string {
+                    
+                    JsonReturn.personalInfo.Origin_EmailAddress = Origin_EmailAddress
+                    
                 }
                 
                 if let Preferred = jsonObject["Preferred"].int {
@@ -1487,18 +1666,6 @@ struct WebApiService {
                     JsonReturn.personalInfo.Preferred = Preferred
                     
                 }
-//
-//                if let WorkPhonePreferred = jsonObject["WorkPhonePreferred"].bool {
-//                    
-//                    JsonReturn.personalInfo.WorkPhonePreferred = WorkPhonePreferred
-//                    
-//                }
-//                
-//                if let MobilePhonePreferred = jsonObject["MobilePhonePreferred"].bool {
-//                    
-//                    JsonReturn.personalInfo.MobilePhonePreferred = MobilePhonePreferred
-//                    
-//                }
                 
                 if let IsSuccess = jsonObject["IsSuccess"].bool {
                     
@@ -1534,16 +1701,23 @@ struct WebApiService {
                 "ReferenceNumber": LocalStore.accessRefNumber()!,
                 "DebtorCode" : LocalStore.accessDRCode()!,
                 "Action": "U",
-                "Address1s" : personalInfo.StreetAddress,
-                "Address2s" : personalInfo.MailAddress,
+                "StreetAddress1" : personalInfo.StreetAddress1,
+                "StreetAddress2" : personalInfo.StreetAddress2,
+                "StreetAddress3" : personalInfo.StreetAddress3,
+                "StreetState" : personalInfo.StreetState,
+                "StreetSuburb" : personalInfo.StreetSuburb,
+                "StreetPostCode" : personalInfo.StreetPostCode,
+                "MailAddress1" : personalInfo.MailAddress1,
+                "MailAddress2" : personalInfo.MailAddress2,
+                "MailAddress3" : personalInfo.MailAddress3,
+                "MailState" : personalInfo.MailState,
+                "MailSuburb" : personalInfo.MailSuburb,
+                "MailPostCode" : personalInfo.MailPostCode,
                 "EmailAddress"     : personalInfo.EmailAddress,
                 "HomeNumber" : personalInfo.HomePhone,
-//              "HomePhonePreferred" : personalInfo.HomePhonePreferred,
                 "WorkNumber" : personalInfo.WorkPhone,
-//                "WorkPhonePreferred" : personalInfo.WorkPhonePreferred,
                 "MobileNumbers" : personalInfo.MobilePhone,
                 "Preferred" : personalInfo.Preferred
-
             ]
         ]
         

@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UIPageViewController/LoginController.swift"
-            timestampString = "511315236.292627"
+            filePath = "UIPageViewController/WebApiService.swift"
+            timestampString = "512542749.170447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "loadData()"
+            startingLineNumber = "1721"
+            endingLineNumber = "1721"
+            landmarkName = "SetPersonalInfo(_:response:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UIPageViewController/WebApiService.swift"
-            timestampString = "511318191.121571"
+            filePath = "UIPageViewController/UpdatePersonalInfoViewController.swift"
+            timestampString = "512542920.03467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1545"
-            endingLineNumber = "1545"
-            landmarkName = "SetPersonalInfo(_:response:)"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
+            landmarkName = "btContinue_Clicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIPageViewController/UpdatePersonalInfoViewController.swift"
+            timestampString = "512543038.710527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "CompareText(displayText:markText:originText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIPageViewController/UpdatePersonalInfoViewController.swift"
+            timestampString = "512543108.452922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "btContinue_Clicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

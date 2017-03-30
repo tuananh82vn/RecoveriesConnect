@@ -133,6 +133,8 @@ class PinLoginViewController: BaseViewController, UITextFieldDelegate , TKAlertD
         
         LocalStore.setArrangementDebtor("")
         LocalStore.setThreePartDateDurationDays(0)
+        LocalStore.setThreePartMaxDaysBetweenPayments(0)
+
         LocalStore.setIsAllowMonthlyInstallment(false)
         
         LocalStore.setIsExistingArrangementDD(false)

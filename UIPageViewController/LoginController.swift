@@ -84,11 +84,23 @@ class LoginController: UIViewController {
                     LocalStore.setClientAcc(temp1.ClientAcc)
                     LocalStore.setClientPhoneInNo(temp1.ClientPhoneInNo)
 
-                    if(temp1.MaxNoPay > 3 ){
+                    if(temp1.MaxNoPay > 3 )
+                    {
                         temp1.MaxNoPay = 3
                     }
+                    
                     LocalStore.setMaxNoPay(temp1.MaxNoPay)
-                    LocalStore.setThreePartDateDurationDays(temp1.client.ThreePartDateDurationDays)
+                    
+                    if(temp1.client.ThreePartDateDurationDays == 0)
+                    {
+                        LocalStore.setThreePartDateDurationDays(90)
+                    }
+                    else
+                    {
+                        LocalStore.setThreePartDateDurationDays(temp1.client.ThreePartDateDurationDays)
+                    }
+                    
+                    LocalStore.setThreePartMaxDaysBetweenPayments(temp1.client.ThreePartMaxDaysBetweenPayments)
 
                     self.logo.stopRotating()
                     

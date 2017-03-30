@@ -119,6 +119,7 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
         dataForm1.dataSource = dataSource
         dataForm1.commitMode = TKDataFormCommitMode.manual
         dataForm1.validationMode = TKDataFormValidationMode.immediate
+        dataForm1.allowScroll = false
 
 
     }
@@ -164,10 +165,10 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
 
                 let value = propery.valueCandidate as! Date
                 
-                let Maxdate = Date() + 7.days
+                let Maxdate = Date() + LocalStore.accessThreePartMaxDaysBetweenPayments().days
                 
                 if(value.isGreaterThanDate(Maxdate)){
-                    dataSource["FirstDate"].errorMessage = "1st payment date must be valid within next 7 days"
+                    dataSource["FirstDate"].errorMessage = "1st payment date must be valid within next "+LocalStore.accessThreePartMaxDaysBetweenPayments().description+" days"
                     self.validate2 = false
                     return self.validate2
 
@@ -216,22 +217,17 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
                 
                 let firstDate = self.dataSource["FirstDate"].valueCandidate as! Date
                 
-                let Maxdate = firstDate + 14.days
-
-                if(value.isLessThanDate(firstDate)){
+                let Maxdate = firstDate + LocalStore.accessThreePartMaxDaysBetweenPayments().days
+                
+                if(value.isLessThanDate(firstDate) || value.equalToDate(firstDate)){
                     dataSource["SecondDate"].errorMessage = "2nd payment date must be later than 1st instalment date"
                     self.validate4 = false
                     return self.validate4
                 }
                 
-                if(value.equalToDate(firstDate)){
-                    dataSource["SecondDate"].errorMessage = "2nd payment date must be later than 1st instalment date"
-                    self.validate4 = false
-                    return self.validate4
-                }
                 
                 if(value.isGreaterThanDate(Maxdate)){
-                    dataSource["SecondDate"].errorMessage = "Maximum time between two payments is 14 days"
+                    dataSource["SecondDate"].errorMessage = "Maximum time between two payments is "+LocalStore.accessThreePartMaxDaysBetweenPayments().description+" days"
                     self.validate4 = false
                     return self.validate4
                     
@@ -275,7 +271,9 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
                     
                     let secondDate = self.dataSource["SecondDate"].valueCandidate as! Date
                     
-                    let Maxdate = secondDate + 14.days
+                    let Maxdate = secondDate + LocalStore.accessThreePartMaxDaysBetweenPayments().days
+                    
+                    let totalMaxDate = Date() + LocalStore.accessThreePartDateDurationDays().days
                     
                     if(value.isLessThanDate(secondDate)){
                         dataSource["ThirdDate"].errorMessage = "3rd payment date must be after the 2nd instalment date"
@@ -290,14 +288,41 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
                     }
                     
                     if(value.isGreaterThanDate(Maxdate)){
-                        dataSource["ThirdDate"].errorMessage = "Maximum between 2 payments is 14 days"
+                        dataSource["ThirdDate"].errorMessage = "Maximum between 2 payments is "+LocalStore.accessThreePartMaxDaysBetweenPayments().description+" days"
                         self.validate6 = false
                         return self.validate6
-                        
+                    }
+                    
+                    if(value.isGreaterThanDate(totalMaxDate)){
+                        dataSource["ThirdDate"].errorMessage = "The maximum payment duration for a 3 part payment is "+LocalStore.accessThreePartDateDurationDays().description+" days from today."
+                        self.validate6 = false
+                        return self.validate6
                     }
                     
                     self.validate6 = true
             }
+        }
+        else
+        {
+            if (propery.name == "SecondDate") {
+                
+                let value = propery.valueCandidate as! Date
+                
+                let totalMaxdate = value + LocalStore.accessThreePartDateDurationDays().days
+                
+                
+                
+                if(value.isGreaterThanDate(totalMaxdate)){
+                    dataSource["SecondDate"].errorMessage = "The maximum payment duration for a 2 part payment is "+LocalStore.accessThreePartDateDurationDays().description+" days from today."
+
+                    self.validate4 = false
+                    return self.validate4
+                    
+                }
+                
+                self.validate4 = true
+            }
+
         }
         
         
