@@ -15,6 +15,7 @@
 		78E75F471AC5FC48001A93F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F451AC5FC48001A93F1 /* Main.storyboard */; };
 		78E75F491AC5FC48001A93F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E75F481AC5FC48001A93F1 /* Images.xcassets */; };
 		78E75F581AC5FC48001A93F1 /* UIPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */; };
+		AE143E231EDBE6490019CA9A /* NormalPhoneEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE143E221EDBE6490019CA9A /* NormalPhoneEditor.swift */; };
 		AE3896481E42BB05006E5987 /* MakePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3896471E42BB05006E5987 /* MakePayment.swift */; };
 		AE38964A1E42BCA3006E5987 /* DateMonthEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3896491E42BCA3006E5987 /* DateMonthEditor.swift */; };
 		AE38964C1E42BCF9006E5987 /* MethodExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE38964B1E42BCF9006E5987 /* MethodExtension.swift */; };
@@ -30,6 +31,7 @@
 		AE886B5E1E386457000C7B6A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE886B5D1E386457000C7B6A /* InitialViewController.swift */; };
 		AE99CDF41E3ED9D500A2732E /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99CDF31E3ED9D500A2732E /* PrivacyPolicyViewController.swift */; };
 		AE99CDF61E3EE28900A2732E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99CDF51E3EE28800A2732E /* AboutViewController.swift */; };
+		AE9D57981E96005D00214DFB /* CustomTextFieldEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D57971E96005D00214DFB /* CustomTextFieldEditor.swift */; };
 		AEA734301E42EEC7001A6F1E /* CreateInstalmentPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA7342F1E42EEC7001A6F1E /* CreateInstalmentPlanViewController.swift */; };
 		AED7317F1E790C4D007CE4AC /* BSBEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED7317E1E790C4D007CE4AC /* BSBEditor.swift */; };
 		C259682C58C1D286B8D28142 /* Pods_UIPageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62A048DF21B05FF53A58C3B /* Pods_UIPageViewController.framework */; };
@@ -144,6 +146,7 @@
 		78E75F561AC5FC48001A93F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78E75F571AC5FC48001A93F1 /* UIPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerTests.swift; sourceTree = "<group>"; };
 		8E33AF7EC9D660BEF0C529EF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE143E221EDBE6490019CA9A /* NormalPhoneEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalPhoneEditor.swift; sourceTree = "<group>"; };
 		AE3896471E42BB05006E5987 /* MakePayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakePayment.swift; sourceTree = "<group>"; };
 		AE3896491E42BCA3006E5987 /* DateMonthEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateMonthEditor.swift; sourceTree = "<group>"; };
 		AE38964B1E42BCF9006E5987 /* MethodExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExtension.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		AE886B5D1E386457000C7B6A /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		AE99CDF31E3ED9D500A2732E /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		AE99CDF51E3EE28800A2732E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AE9D57971E96005D00214DFB /* CustomTextFieldEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldEditor.swift; sourceTree = "<group>"; };
 		AEA7342F1E42EEC7001A6F1E /* CreateInstalmentPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateInstalmentPlanViewController.swift; sourceTree = "<group>"; };
 		AEB371B81E8B320300E53447 /* Recoveries Connect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Recoveries Connect.entitlements"; sourceTree = "<group>"; };
 		AED7317E1E790C4D007CE4AC /* BSBEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBEditor.swift; sourceTree = "<group>"; };
@@ -457,9 +461,11 @@
 		C7ABFCC11BEB0451009BCE1E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				AE9D57971E96005D00214DFB /* CustomTextFieldEditor.swift */,
 				AED7317E1E790C4D007CE4AC /* BSBEditor.swift */,
 				C745F4841CD7206100EB7A35 /* FolderManager.swift */,
 				C798DD471CBF58B2002F3E7E /* MyPhoneEditor.swift */,
+				AE143E221EDBE6490019CA9A /* NormalPhoneEditor.swift */,
 				C77E1CEB1C7AADDF004AAEFF /* JLToast */,
 				C7B6B3751C76E389008D670C /* SCLAlertView.swift */,
 				C783D05D1C1009E200AE7265 /* LocalStore.swift */,
@@ -801,6 +807,7 @@
 				C7E351BF1C155A2600315A47 /* DeviceDetect.swift in Sources */,
 				AE886B5E1E386457000C7B6A /* InitialViewController.swift in Sources */,
 				AE886B581E3825C5000C7B6A /* CreditCardValidationType.swift in Sources */,
+				AE9D57981E96005D00214DFB /* CustomTextFieldEditor.swift in Sources */,
 				C7A216021C1E7E7C008A03A7 /* SetupPaymentViewController.swift in Sources */,
 				C797D6391C72D0DC0083CD88 /* CoDebtor.swift in Sources */,
 				AE38964A1E42BCA3006E5987 /* DateMonthEditor.swift in Sources */,
@@ -809,6 +816,7 @@
 				C7E6B01E1BF06A3F00D60EC1 /* Serializable.swift in Sources */,
 				C7E9097F1C17D45900BB65E3 /* PinLoginViewController.swift in Sources */,
 				C7F92A151C18FC9000AE9AAB /* MakePaymentViewController.swift in Sources */,
+				AE143E231EDBE6490019CA9A /* NormalPhoneEditor.swift in Sources */,
 				AE99CDF61E3EE28900A2732E /* AboutViewController.swift in Sources */,
 				C7BB33D71CD07C5800BEFA31 /* LocalDatabase.swift in Sources */,
 				C7B931C21BEB0E2A00A63F55 /* SelectDebtorController.swift in Sources */,

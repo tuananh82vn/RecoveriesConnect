@@ -1,13 +1,13 @@
 
-class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
+class CustomTextFieldEditor: TKDataFormEditor, UITextFieldDelegate {
     
-    let textField = MyTextField()
+    let textField = MyTextField1()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         textField.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: 31)
-        textField.keyboardType = .phonePad
-        textField.addTarget(self, action: #selector(MyPhoneEditor.notifyValueChange), for: .editingChanged)
+        textField.keyboardType = .default
+        textField.addTarget(self, action: #selector(CustomTextFieldEditor.notifyValueChange), for: .editingChanged)
         textField.delegate = self
         self.addSubview(textField)
         self.gridLayout.addDefinition(for: textField, atRow: 0, column: 2, rowSpan: 1, columnSpan: 1)
@@ -57,39 +57,10 @@ class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
     }
     
     func notifyValueChange() {
-        self.formatText()
         self.value = textField.text
         self.owner.editorValueChanged(self)
     }
-    
-    func formatText() {
-        let text: NSMutableString = NSMutableString(string: textField.text!)
-        if text.length == 0 {
-            return
-        }
-        let last: String = text.substring(from: text.length - 1)
-        if text.length == 5 {
-            if (last == " ") {
-                text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-            }
-            else {
-                text.insert(" ", at: 4)
-            }
-        }
-        else if text.length == 9 {
-            if (last == " ") {
-                text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-            }
-            else {
-                text.insert(" ", at: 8)
-            }
-        }
-        else if text.length > 12 {
-            text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-        }
-        
-        self.textField.text = text as String
-    }
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -97,14 +68,14 @@ class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //self.textField.text = ""
+        self.textField.text = ""
         self.owner.setEditorOnFocus(self)
         return true
     }
-
+    
 }
 
-class MyTextField: UITextField {
+class MyTextField1: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
     

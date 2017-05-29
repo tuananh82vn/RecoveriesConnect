@@ -1,7 +1,7 @@
 
-class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
+class NormalPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
     
-    let textField = MyTextField()
+    let textField = MyTextField2()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,38 +57,9 @@ class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
     }
     
     func notifyValueChange() {
-        self.formatText()
+        //self.formatText()
         self.value = textField.text
         self.owner.editorValueChanged(self)
-    }
-    
-    func formatText() {
-        let text: NSMutableString = NSMutableString(string: textField.text!)
-        if text.length == 0 {
-            return
-        }
-        let last: String = text.substring(from: text.length - 1)
-        if text.length == 5 {
-            if (last == " ") {
-                text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-            }
-            else {
-                text.insert(" ", at: 4)
-            }
-        }
-        else if text.length == 9 {
-            if (last == " ") {
-                text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-            }
-            else {
-                text.insert(" ", at: 8)
-            }
-        }
-        else if text.length > 12 {
-            text.deleteCharacters(in: NSMakeRange(text.length - 1, 1))
-        }
-        
-        self.textField.text = text as String
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,10 +72,10 @@ class MyPhoneEditor: TKDataFormEditor, UITextFieldDelegate {
         self.owner.setEditorOnFocus(self)
         return true
     }
-
+    
 }
 
-class MyTextField: UITextField {
+class MyTextField2: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
     

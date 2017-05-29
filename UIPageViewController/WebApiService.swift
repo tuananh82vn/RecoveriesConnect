@@ -602,7 +602,7 @@ struct WebApiService {
                     JsonReturn.NextPaymentInstallment = NextPaymentInstallment.roundTo(places: 2)
                 }
                 
-                if let MinimumMonthlyOustanding = jsonObject["MinimumMonthlyOustanding"].double {
+                if let MinimumMonthlyOustanding = jsonObject["MinimumMonthlyOutstanding"].double {
                     JsonReturn.MinimumMonthlyOustanding = MinimumMonthlyOustanding.roundTo(places: 2)
                 }
                 

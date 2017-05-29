@@ -90,7 +90,7 @@ class PayInInstalmentViewController : UIViewController , TKDataFormDelegate {
     @IBAction func btNext_Clicked(_ sender: AnyObject) {
         
         self.dataForm1.commit()
-        self.dataForm1.commit()
+        //self.dataForm1.commit()
 
         self.isFormValidate = self.validate1 && self.validate2 && self.validate3
         

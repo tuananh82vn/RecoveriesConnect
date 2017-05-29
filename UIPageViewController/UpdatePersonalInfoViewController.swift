@@ -76,7 +76,9 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource.sourceObject = self.paymentInfo.personalInfo
                     
                     self.dataSource["StreetAddress1"].editorClass = TKDataFormTextFieldEditor.self
+//                    self.dataSource["StreetAddress1"].editorClass = CustomTextFieldEditor.self
                     self.dataSource["StreetAddress1"].displayName = "Address 1"
+                    
                     self.dataSource["Origin_StreetAddress1"].hidden = true
                     self.dataSource["Marked_StreetAddress1"].hidden = true
                     
@@ -112,6 +114,7 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
 
                     self.dataSource["MailAddress1"].editorClass = TKDataFormTextFieldEditor.self
                     self.dataSource["MailAddress1"].displayName = "Address 1"
+                
 
                     self.dataSource["Origin_MailAddress1"].hidden = true
                     self.dataSource["Marked_MailAddress1"].hidden = true
@@ -145,11 +148,11 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource["Marked_MailState"].hidden = true
                     
                     
-                    self.dataSource["HomePhone"].editorClass = TKDataFormPhoneEditor.self
+                    self.dataSource["HomePhone"].editorClass = NormalPhoneEditor.self
                     self.dataSource["Origin_HomePhone"].hidden = true
                     self.dataSource["Marked_HomePhone"].hidden = true
 
-                    self.dataSource["WorkPhone"].editorClass = TKDataFormPhoneEditor.self
+                    self.dataSource["WorkPhone"].editorClass = NormalPhoneEditor.self
                     self.dataSource["Origin_WorkPhone"].hidden = true
                     self.dataSource["Marked_WorkPhone"].hidden = true
 
@@ -164,7 +167,7 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource["EmailAddress"].displayName = "Email"
                     self.dataSource["Origin_EmailAddress"].hidden = true
                     self.dataSource["Marked_EmailAddress"].hidden = true
-
+                    
                     self.dataSource.addGroup(withName: "Street Address", propertyNames: [ "StreetAddress1","StreetAddress2","StreetAddress3","StreetSuburb","StreetPostCode","StreetState" ])
 
                     self.dataSource.addGroup(withName: "Mail Address", propertyNames: [ "MailAddress1","MailAddress2","MailAddress3","MailSuburb","MailPostCode","MailState" ])
@@ -172,7 +175,6 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
                     self.dataSource.addGroup(withName: "Phone & Email", propertyNames: [ "HomePhone","WorkPhone","MobilePhone","Preferred" ,"EmailAddress"])
                     
                     self.dataForm1.groupSpacing = 30
-
                     self.dataForm1 = TKDataForm(frame: self.subView.bounds)
                     
                     self.dataForm1.delegate = self
@@ -244,39 +246,9 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         
         property.hintText = property.displayName
         
-//        if alignmentMode == "Top" {
-//            self.performTopAlignmentSettingsForEditor(editor, property: property)
-//        }
-        
-//        if(property.name == "Preferred")
-//        {
-//            editor.style.separatorColor = nil
-//            editor.style.insets = UIEdgeInsetsMake(6, editor.style.insets.left, 6, editor.style.insets.right)
-//        }
         
     }
     
-//    func performTopAlignmentSettingsForEditor(_ editor: TKDataFormEditor, property: TKEntityProperty) {
-//        
-//        editor.style.separatorColor = nil
-//        //editor.textLabel.font = UIFont.systemFontOfSize(15)
-//        editor.style.insets = UIEdgeInsetsMake(1, editor.style.insets.left, 5, editor.style.insets.right)
-//        
-//        
-//        let gridLayout = editor.gridLayout
-//        let editorDef = gridLayout.definition(for: editor.editor)
-//        editorDef?.row = 1
-//        editorDef?.column = 1
-//        
-//        
-//        let feedbackLabelDef = editor.gridLayout.definition(for: editor.feedbackLabel)
-//        feedbackLabelDef?.row = 2
-//        feedbackLabelDef?.column = 1
-//        feedbackLabelDef?.columnSpan = 1
-//        
-//        self.setEditorStyle(editor)
-//        
-//    }
     
     func setEditorStyle(_ editor: TKDataFormEditor) {
         
@@ -319,13 +291,6 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         return true
     }
     
-    
-//    func dataForm(_ dataForm: TKDataForm, heightForEditorInGroup gorupIndex: UInt, at editorIndex: UInt) -> CGFloat {
-//
-//        return 65
-//
-//    }
-//
     
     func dataForm(_ dataForm: TKDataForm, heightForHeaderInGroup groupIndex: UInt) -> CGFloat {
         return 40
