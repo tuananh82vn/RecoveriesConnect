@@ -33,9 +33,28 @@ extension Double {
 //    }
     
     /// Rounds the double to decimal places value
-    func roundTo(places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
+//    func roundTo(places:Int) -> Double {
+//        
+//        let divisor = pow(10.0, Double(places))
+//        
+//        var result =  (self * divisor).rounded() / divisor
+//        
+//        var tempString = (String(format: "%.2f", result) as NSString).doubleValue
+//        
+//        return tempString
+//    
+//    }
+    
+    public func roundTo(places:Int) -> Double {
+        var v = self
+        var divisor = 1.0
+        if places > 0 {
+            for _ in 1 ... places {
+                v *= 10.0
+                divisor *= 0.1
+            }
+        }
+        return v.rounded() * divisor
     }
     
     

@@ -278,7 +278,7 @@ struct LocalStore {
     
     //----------------------------------------------------------------------------//
 
-    static func setTotalOutstanding(_ token: Double) {
+    static func setTotalOutstanding(_ token: String) {
         userDefaults.set(token, forKey: TotalOutstanding)
         userDefaults.synchronize()
     }
@@ -288,8 +288,8 @@ struct LocalStore {
         userDefaults.synchronize()
     }
     
-    static func accessTotalOutstanding() -> Double {
-        return userDefaults.double(forKey: TotalOutstanding)
+    static func accessTotalOutstanding() -> String? {
+        return userDefaults.string(forKey: TotalOutstanding)
     }
     
     //----------------------------------------------------------------------------//

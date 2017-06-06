@@ -11,7 +11,7 @@ import UIKit
 
 class CardInfo: NSObject {
 
-    var Amount = Double()
+    var Amount = Float32()
     var PaymentMethod = 0
     var CardType = 0
     var NameOnCard = ""

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UIPageViewController/WebApiService.swift"
-            timestampString = "511315236.770198"
+            timestampString = "518418669.838068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1123"
-            endingLineNumber = "1123"
+            startingLineNumber = "1125"
+            endingLineNumber = "1125"
             landmarkName = "MakeDebitPayment(_:PaymentType:response:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UIPageViewController/WebApiService.swift"
-            timestampString = "512542749.170447"
+            timestampString = "518418669.838068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1721"
-            endingLineNumber = "1721"
+            startingLineNumber = "1723"
+            endingLineNumber = "1723"
             landmarkName = "SetPersonalInfo(_:response:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -48,6 +48,70 @@
             startingLineNumber = "300"
             endingLineNumber = "300"
             landmarkName = "CompareText(displayText:markText:originText:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIPageViewController/MakeCreditPaymentViewController.swift"
+            timestampString = "518423048.887576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
+            landmarkName = "dataForm(_:validate:editor:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recoveries_Connect.MakeCreditPaymentViewController.dataForm (__ObjC.TKDataForm, validate : __ObjC.TKEntityProperty, editor : __ObjC.TKDataFormEditor) -&gt; Swift.Bool"
+                  moduleName = "Recoveries Connect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuananh82vn/Desktop/RecoveriesConnect/UIPageViewController/MakeCreditPaymentViewController.swift"
+                  timestampString = "518423481.993381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "352"
+                  endingLineNumber = "352"
+                  offsetFromSymbolStart = "13676">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Recoveries_Connect.MakeCreditPaymentViewController.dataForm (__ObjC.TKDataForm, validate : __ObjC.TKEntityProperty, editor : __ObjC.TKDataFormEditor) -&gt; Swift.Bool"
+                  moduleName = "Recoveries Connect"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tuananh82vn/Desktop/RecoveriesConnect/UIPageViewController/MakeCreditPaymentViewController.swift"
+                  timestampString = "518423481.997271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "352"
+                  endingLineNumber = "352"
+                  offsetFromSymbolStart = "39316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UIPageViewController/LoginController.swift"
+            timestampString = "518419558.146986"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

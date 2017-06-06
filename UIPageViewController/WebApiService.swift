@@ -579,7 +579,9 @@ struct WebApiService {
                 }
 
                 if let TotalOutstanding = jsonObject["TotalOutstanding"].double {
-                    JsonReturn.TotalOutstanding = TotalOutstanding.roundTo(places: 2)
+                    
+                    JsonReturn.TotalOutstanding = String(format: "%.2f", TotalOutstanding)
+                    
                 }
                 
                 if let MaxNoPay = jsonObject["MaxNoPay"].int {

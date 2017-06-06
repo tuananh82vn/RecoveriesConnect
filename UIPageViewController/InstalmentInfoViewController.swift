@@ -150,7 +150,7 @@ class InstalmentInfoViewController: UIViewController , TKChartDelegate {
             }
         }
         
-        let temp2 = LocalStore.accessTotalOutstanding()
+        let temp2 = (LocalStore.accessTotalOutstanding()?.doubleValue)!
         
         if(temp2 > 0 )
         {

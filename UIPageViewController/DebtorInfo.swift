@@ -16,7 +16,7 @@ class DebtorInfo {
     var AccountCode : String
     var DebtorCode : String
     var DRCode : String
-    var TotalOutstanding : Double
+    var TotalOutstanding : String
     var NextPaymentInstallment: Double
     var MerchantId : String
     var PaymentType : Int
@@ -69,7 +69,7 @@ class DebtorInfo {
         AccountCode = ""
         DebtorCode = ""
         DRCode = ""
-        TotalOutstanding = 0
+        TotalOutstanding = ""
         NextPaymentInstallment = 0
         MerchantId = ""
         PaymentType = 0

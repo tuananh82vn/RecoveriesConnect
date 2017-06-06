@@ -255,7 +255,7 @@ class PayInInstalmentViewController : UIViewController , TKDataFormDelegate {
         var paidAmount : Double = 0
         let amount = (self.dataSource["InstalmentAmount"].valueCandidate as AnyObject).description.doubleValue.roundTo(places: 2)
         
-        let totalAmount = LocalStore.accessTotalOutstanding()
+        let totalAmount = (LocalStore.accessTotalOutstanding()?.doubleValue)!
         var installmentAmount =  amount < totalAmount ? amount : totalAmount
         
         let Frequency = self.dataSource["Frequency"].valueCandidate as! Int

@@ -67,7 +67,7 @@ class HomeViewController: UIViewController, TKSideDrawerDelegate  {
         setupButton(LocalStore.accessDeviceName())
         
         self.lbl_refnumber.text = LocalStore.accessRefNumber()
-        self.lbl_outstanding.text = LocalStore.accessTotalOutstanding().formatAsCurrency()
+        self.lbl_outstanding.text = LocalStore.accessTotalOutstanding()?.doubleValue.formatAsCurrency()
         self.lbl_ourClient.text = LocalStore.accessClientName()
         self.lbl_ClientAccountNumber.text = LocalStore.accessClientAcc()
         

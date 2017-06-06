@@ -121,7 +121,7 @@ class PinLoginViewController: BaseViewController, UITextFieldDelegate , TKAlertD
         LocalStore.setMonthlyAmount(0)
         
         LocalStore.setFortnightAmount(0)
-        LocalStore.setTotalOutstanding(0)
+        LocalStore.setTotalOutstanding("0")
         LocalStore.setIsExistingArrangement(false)
         
         LocalStore.setIsCoBorrowersSelected(false)

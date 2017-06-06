@@ -97,11 +97,11 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
         
 
         if(LocalStore.accessMakePaymentIn3Part() || LocalStore.accessMakePaymentInstallment()){
-            cardInfo.Amount = LocalStore.accessFirstAmountOfInstalment()
+            cardInfo.Amount = Float32(LocalStore.accessFirstAmountOfInstalment())
         }
         else
         {
-            cardInfo.Amount = LocalStore.accessTotalOutstanding()
+            cardInfo.Amount = LocalStore.accessTotalOutstanding()!.floatValue
         }
         
         dataSource2.sourceObject = cardInfo
@@ -328,6 +328,8 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
 
         if (propery.name == "Amount") {
             
+            
+            
             let value = (propery.valueCandidate as AnyObject).description
             if ((value?.length)! <= 0)
             {
@@ -336,10 +338,10 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
                 return self.validate1
             }
 
-            let floatValue = value?.floatValue
-            let minValue : Float  = 10.00
+            let doubleValue = value?.doubleValue
+            let minValue : Double  = 10.00
 
-            if (floatValue! <= minValue)
+            if (doubleValue! <= minValue)
             {
                 dataSource2["Amount"].errorMessage = "Payment amount is less than the minimum required"
                 self.validate1 = false
@@ -347,7 +349,7 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
 
             }
             else
-                if (Double((floatValue?.description)!) > LocalStore.accessTotalOutstanding())
+                if (doubleValue > (LocalStore.accessTotalOutstanding()?.doubleValue)!)
                 {
                     dataSource2["Amount"].errorMessage = "Payment amount must be less than or equal with the outstanding amount"
                     self.validate1 = false
@@ -685,7 +687,7 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
             return
         }
         
-        cardObject.Amount       = (self.dataSource2["Amount"].valueCandidate as AnyObject).doubleValue
+        cardObject.Amount       = (self.dataSource2["Amount"].valueCandidate as AnyObject).floatValue
         
         if(cardObject.PaymentMethod == 0){
 
@@ -734,7 +736,8 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
 //        5: Pay Next Instalment
 
 
-        if(cardObject.Amount == LocalStore.accessTotalOutstanding()){
+        if(cardObject.Amount == LocalStore.accessTotalOutstanding()!.floatValue)
+        {
             PaymentType = 1
             LocalStore.setMakePaymentInFull(true)
         }
@@ -747,7 +750,7 @@ class MakeCreditPaymentViewController: UIViewController , TKDataFormDelegate , U
                     PaymentType = 3
                 }
                 else
-                    if(cardObject.Amount < LocalStore.accessTotalOutstanding()){
+                    if(cardObject.Amount < LocalStore.accessTotalOutstanding()!.floatValue){
                         PaymentType = 4
                         LocalStore.setMakePaymentOtherAmount(true)
                     }

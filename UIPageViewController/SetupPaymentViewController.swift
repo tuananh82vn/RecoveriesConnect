@@ -63,7 +63,7 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
     
     func InitData(){
         
-        let totalAmount =  LocalStore.accessTotalOutstanding()
+        let totalAmount =  (LocalStore.accessTotalOutstanding()?.doubleValue)!
         
         if(LocalStore.accessMaxNoPay()==2){
 
@@ -379,7 +379,7 @@ class SetupPaymentViewController: UIViewController , TKDataFormDelegate {
             
             
             
-            if(totalAmount.formatWithDecimal(2) != LocalStore.accessTotalOutstanding().formatWithDecimal(2)){
+            if(totalAmount.formatWithDecimal(2) != (LocalStore.accessTotalOutstanding()?.doubleValue)!.formatWithDecimal(2)){
                 
                 //Format number
                 
