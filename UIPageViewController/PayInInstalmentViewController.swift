@@ -178,7 +178,7 @@ class PayInInstalmentViewController : UIViewController , TKDataFormDelegate {
             let frequency = self.dataSource["Frequency"].valueCandidate as! Int
             
             if(frequency == 0 ){
-                if (floatValue! < LocalStore.accessWeeklyAmount())
+                if (floatValue! < round(100 * LocalStore.accessWeeklyAmount())/100)
                 {
                     dataSource["InstalmentAmount"].errorMessage = "Payment does not meet your negotiated limit"
                     self.validate1 = false
@@ -192,7 +192,7 @@ class PayInInstalmentViewController : UIViewController , TKDataFormDelegate {
             }
             else
                 if(frequency == 1 ){
-                    if (floatValue! < LocalStore.accessFortnightAmount())
+                    if (floatValue! <  round(100 * LocalStore.accessFortnightAmount())/100)
                     {
                         dataSource["InstalmentAmount"].errorMessage = "Payment does not meet your negotiated limit"
                         self.validate1 = false
@@ -205,7 +205,7 @@ class PayInInstalmentViewController : UIViewController , TKDataFormDelegate {
             }
             else
                     if(frequency == 2 ){
-                        if (floatValue! < LocalStore.accessMonthlyAmount())
+                        if (floatValue! < round(100 * LocalStore.accessMonthlyAmount())/100)
                         {
                             dataSource["InstalmentAmount"].errorMessage = "Payment does not meet your negotiated limit"
                             self.validate1 = false

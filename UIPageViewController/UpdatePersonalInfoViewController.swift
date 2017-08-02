@@ -412,7 +412,7 @@ class UpdatePersonalInfoViewController: UIViewController , TKDataFormDelegate {
         if segue.identifier == "GoToNotice" {
             
             let controller = segue.destination as! FinishViewController
-            controller.message = "Your personal information has been updated successfully"
+            controller.message = "Thank you for updating your personal details. Your changes will be forwarded to our office for validation."
             
         }
         
